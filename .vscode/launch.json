@@ -1,0 +1,19 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "python": "/home/zwl/software/anaconda3/envs/paddle_ocr/bin/python3",
+            "args": [],
+            "console": "integratedTerminal",
+            // 不止debug我自己写得代码
+            "justMyCode": false,
+        },
+    ]
+}
