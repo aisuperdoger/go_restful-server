@@ -6,7 +6,7 @@ import numpy as np
 import algorithm.paddle_ocr as paddle_ocr
 
 
-class Ocr(paddle_ocr_pb2_grpc.PaddleOcrServiceServicer):
+class PaddleOcrService(paddle_ocr_pb2_grpc.PaddleOcrServiceServicer):
     def PaddleOcr(self, request, context):
         
         # 将二进制image_text.image转化PIL.Image
@@ -30,7 +30,7 @@ class Ocr(paddle_ocr_pb2_grpc.PaddleOcrServiceServicer):
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=20))
-    paddle_ocr_pb2_grpc.add_PaddleOcrServiceServicer_to_server(Ocr(), server)
+    paddle_ocr_pb2_grpc.add_PaddleOcrServiceServicer_to_server(PaddleOcrService(), server)
     server.add_insecure_port('[::]:50051')
     server.start()
     server.wait_for_termination()
