@@ -15,7 +15,7 @@ class PaddleOcrServiceStub(object):
             channel: A grpc.Channel.
         """
         self.PaddleOcr = channel.unary_unary(
-                '/PaddleOcrService/PaddleOcr',
+                '/paddle_ocr.PaddleOcrService/PaddleOcr',
                 request_serializer=paddle__ocr__pb2.Image.SerializeToString,
                 response_deserializer=paddle__ocr__pb2.ImageText.FromString,
                 )
@@ -40,7 +40,7 @@ def add_PaddleOcrServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'PaddleOcrService', rpc_method_handlers)
+            'paddle_ocr.PaddleOcrService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -59,7 +59,7 @@ class PaddleOcrService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/PaddleOcrService/PaddleOcr',
+        return grpc.experimental.unary_unary(request, target, '/paddle_ocr.PaddleOcrService/PaddleOcr',
             paddle__ocr__pb2.Image.SerializeToString,
             paddle__ocr__pb2.ImageText.FromString,
             options, channel_credentials,

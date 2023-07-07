@@ -1,1 +1,7 @@
 tests/
+go_client/results
+results
+python_server/yolov5_classify_life_jacket/algorithm/weights
+**/algorithm/
+runs
+traced_model.pt

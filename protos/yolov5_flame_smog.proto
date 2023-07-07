@@ -1,0 +1,17 @@
+syntax = "proto3";
+option go_package = "./yolov5_flame_smog";
+package yolov5_flame_smog;
+
+message Image {
+  bytes image = 1; // 需要注意的是，图片数据使用 bytes 类型进行传输。在返回图片数据时，通常需要将其转换为 Base64 编码后再传输。
+}
+
+message  VideoPath{
+  string path = 1;
+}
+
+service Yolov5FlameSmogService {
+  rpc yolov5FlameSmogImage(Image) returns (Image);
+  rpc yolov5FlameSmogVideo(VideoPath) returns (VideoPath);
+}
+

@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10paddle_ocr.proto\"\x16\n\x05Image\x12\r\n\x05image\x18\x01 \x01(\x0c\"(\n\tImageText\x12\r\n\x05image\x18\x01 \x01(\x0c\x12\x0c\n\x04text\x18\x02 \x01(\t23\n\x10PaddleOcrService\x12\x1f\n\tPaddleOcr\x12\x06.Image\x1a\n.ImageTextB\x0eZ\x0c./paddle_ocrb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10paddle_ocr.proto\x12\npaddle_ocr\"\x16\n\x05Image\x12\r\n\x05image\x18\x01 \x01(\x0c\"(\n\tImageText\x12\r\n\x05image\x18\x01 \x01(\x0c\x12\x0c\n\x04text\x18\x02 \x01(\t2I\n\x10PaddleOcrService\x12\x35\n\tPaddleOcr\x12\x11.paddle_ocr.Image\x1a\x15.paddle_ocr.ImageTextB\x0eZ\x0c./paddle_ocrb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'paddle_ocr_pb2', globals())
@@ -21,10 +21,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z\014./paddle_ocr'
-  _IMAGE._serialized_start=20
-  _IMAGE._serialized_end=42
-  _IMAGETEXT._serialized_start=44
-  _IMAGETEXT._serialized_end=84
-  _PADDLEOCRSERVICE._serialized_start=86
-  _PADDLEOCRSERVICE._serialized_end=137
+  _IMAGE._serialized_start=32
+  _IMAGE._serialized_end=54
+  _IMAGETEXT._serialized_start=56
+  _IMAGETEXT._serialized_end=96
+  _PADDLEOCRSERVICE._serialized_start=98
+  _PADDLEOCRSERVICE._serialized_end=171
 # @@protoc_insertion_point(module_scope)

@@ -9,7 +9,7 @@
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            "python": "/home/zwl/software/anaconda3/envs/paddle_ocr/bin/python3",
+            "python": "/home/zwl/software/anaconda3/envs/yolov5_flame_smog/bin/python3",
             "args": [],
             "console": "integratedTerminal",
             // 不止debug我自己写得代码

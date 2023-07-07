@@ -1,0 +1,13 @@
+syntax = "proto3";
+option go_package = "./yolov5_leakage";
+package yolov5_leakage;
+
+message  VideoPath{
+  string path = 1;
+}
+
+service Yolov5LeakageService {
+  rpc heatAreaDetection(VideoPath) returns (VideoPath);
+  rpc oilDetection(VideoPath) returns (VideoPath);
+}
+

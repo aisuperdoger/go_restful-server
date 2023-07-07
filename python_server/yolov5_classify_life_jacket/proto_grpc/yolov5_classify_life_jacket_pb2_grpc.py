@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import proto_grpc.yolov5_classify_life_jacket_pb2 as yolov5__classify__life__jacket__pb2
+import yolov5_classify_life_jacket_pb2 as yolov5__classify__life__jacket__pb2
 
 
 class TestYolov5ClassifyLifeJacketServiceStub(object):

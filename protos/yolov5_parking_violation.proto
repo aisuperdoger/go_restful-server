@@ -1,0 +1,12 @@
+syntax = "proto3";
+option go_package = "./yolov5_parking_violation";
+package yolov5_parking_violation;
+
+message  VideoPath{
+  string path = 1;
+}
+
+service Yolov5ParkingViolationService {
+  rpc yolov5ParkingViolation(VideoPath) returns (VideoPath);
+}
+

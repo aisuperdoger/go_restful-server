@@ -1,0 +1,17 @@
+syntax = "proto3";
+ 
+option go_package = "./yolov5_classify_life_jacket";
+
+message  DatasetPath{
+  string file_path = 1;
+  string json_path = 2; 
+}
+
+message  ResultJson{
+  string data=1;
+}
+
+service TestYolov5ClassifyLifeJacketService {
+  rpc testYolov5ClassifyLifeJacket(DatasetPath) returns (ResultJson);
+}
+

@@ -21,11 +21,11 @@ def serve():
     yolov5_classify_life_jacket_pb2_grpc.add_TestYolov5ClassifyLifeJacketServiceServicer_to_server(TestYolov5ClassifyLifeJacketService(), server)
     
     # 使用grpcui测试时，需要的代码
-    SERVICE_NAMES = (
-        yolov5_classify_life_jacket_pb2.DESCRIPTOR.services_by_name['TestYolov5ClassifyLifeJacketService'].full_name,
-        reflection.SERVICE_NAME,
-    )
-    reflection.enable_server_reflection(SERVICE_NAMES, server)
+    # SERVICE_NAMES = (
+    #     yolov5_classify_life_jacket_pb2.DESCRIPTOR.services_by_name['TestYolov5ClassifyLifeJacketService'].full_name,
+    #     reflection.SERVICE_NAME,
+    # )
+    # reflection.enable_server_reflection(SERVICE_NAMES, server)
     
     server.add_insecure_port('[::]:50052')
     server.start()
