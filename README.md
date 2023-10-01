@@ -3,10 +3,48 @@
 server端运行:
 ```
 sudo docker build -f Dockerfile -t go_client:v1.0 .
-sudo docker run -it  -p 8080:8080 go_client:v1.0
+sudo docker run -it  -p 9997:9997 go_client:v1.0 ./go_client 9997
 ```
 
 【注】由于保密原因，具体的算法并不包含在本项目中。
+
+
+# 简单的nginx反向代理
+
+反向代理配置：
+```
+worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    sendfile        on;
+    keepalive_timeout  65;
+
+    upstream backend_servers { # 需要代理的服务器ip
+        # 两个服务器的代码都是weight=1，这代表访问127.0.0.1:9997时，
+        # 有相等的概率“打到”这下面两个服务器上
+        server 127.0.0.1:9997 weight=1;
+        server 127.0.0.1:9998 weight=1;
+    }
+
+    server {
+        listen       8080;
+        server_name  127.0.0.1; # 访问使用的ip
+
+        location / {
+                proxy_pass http://backend_servers;
+        }
+    }
+}
+```
+
 
 # 添加新算法的流程
 

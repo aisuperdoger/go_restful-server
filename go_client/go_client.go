@@ -9,6 +9,8 @@ import (
 	yolov5_leakage_client "example.com/go_client/yolov5_leakage"
 	"github.com/gin-gonic/gin"
 	configs "example.com/go_client/configs"
+	"os"
+	"fmt"
 )
 
 
@@ -23,5 +25,12 @@ func main() {// 先不修改C++服务器中的代码  go服务器使用8080端�
 	router.POST("/api2/paddleOcr", paddle_ocr_client.PaddleOcr)                                       // multipart forms的内存限制默认是 32 MiB
 	// router.POST("/api2/testYolov5ClassifyLifeJacket", yolov5_classify_life_jacket_client.TestYolov5ClassifyLifeJacket) // multipart forms的内存限制默认是 32 MiB
 	router.Static("/results", configs.RESULT_PATH)
-	router.Run(":8080")
+
+	args := os.Args
+	if len(args) < 2 {
+		fmt.Println("please input port")
+		os.Exit(1)
+	}
+
+	router.Run(":"+args[1])
 }
