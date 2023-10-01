@@ -2,13 +2,8 @@
 
 server端运行:
 ```
-cd go_client
-go  run .
-```
-
-启动所有算法的grpc服务：
-```
-bash run.sh
+sudo docker build -f Dockerfile -t go_client:v1.0 .
+sudo docker run -it  -p 8080:8080 go_client:v1.0
 ```
 
 【注】由于保密原因，具体的算法并不包含在本项目中。

@@ -1,6 +1,9 @@
 # conda_install_path=/home/zwl/software/anaconda3
 # source ${conda_install_path}/etc/profile.d/conda.sh
 
+cd go_client/
+go run .
+
 
 # 算法运行
 cd python_server/paddle_ocr/
